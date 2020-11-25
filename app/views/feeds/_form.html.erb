@@ -11,22 +11,22 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :baby_id %>
     <%= form.select :baby_id, options_from_collection_for_select(@babies, :id, :name) %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :cantidad %>
     <%= form.text_field :cantidad %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :Duración %>
     <%= form.text_field :time %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :Fecha %>
     <%= form.datetime_field :date %>
   </div>

@@ -1,29 +1,34 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Bebé:</strong>
-  <%= @baby.name %>
-</p>
 
-<p>
-  <strong>Veces alimentado hoy:</strong>
-  <%= @baby.today_feeds %>
-</p>
 
-<p>
-  <strong>Última alimentación:</strong>
-  <%= @baby.last_feed %>
-</p>
+<table class="table col-6">
+  
+  <tbody>
+    <tr>
+      <td><strong>Bebé:</strong></td>
+      <td><%= @baby.name %></td>
+    </tr>
+    <tr>
+      <td><strong>Veces alimentado hoy:</strong></td>
+      <td><%= @baby.today_feeds %></td>
+    </tr>
+    <tr>
+      <td><strong>Última alimentación:</strong></td>
+      <td><%= @baby.last_feed %></td>
+    </tr>
+    <tr>
+      <td><strong>Tiempo alimentado hoy:</strong></td>
+      <td><%= @baby.total_time_today%> secs</td>
+    </tr>
+    <tr>
+      <td><strong>Cantidad de alimento hoy:</strong></td>
+      <td><%= @baby.total_feeds_today %> mls</td>
+    </tr>
 
-<p>
-  <strong>Tiempo alimentado hoy:</strong>
-  <%= @baby.total_time_today%> secs
-</p>
+  </tbody>
+</table>
 
-<p>
-  <strong>Cantidad de alimento hoy:</strong>
-  <%= @baby.total_feeds_today %> mls
-</p>
 
-<p><%= link_to 'Edit', edit_baby_path(@baby) %></p>
-<p><%= link_to 'Back', babies_path %></p>
+<p><%= link_to 'Renombrar', edit_baby_path(@baby), :class => "badge badge-light text-reset" %></p>
+<p><%= link_to 'Index', babies_path, :class => "badge badge-light text-reset"  %></p>

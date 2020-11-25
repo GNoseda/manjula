@@ -2,7 +2,7 @@
 
 <h1>Registros de alimentación</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Bebes alimentado</th>
@@ -30,5 +30,5 @@
 
 <br>
 
-<%= link_to 'Alimentar!', new_feed_path %>
-<%= link_to 'Bebes', babies_path %>
+<p><%= link_to 'Alimentar!', new_feed_path, :class => "badge badge-light text-reset"  %></p>
+<p><%= link_to 'Bebes', babies_path, :class => "badge badge-light text-reset" %></p>

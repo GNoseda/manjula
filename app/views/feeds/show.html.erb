@@ -1,25 +1,26 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Bebes:</strong>
-  <%= Baby.find_by(id: @feed.baby_id).name %>
-</p>
+<table class="table col-6">
+  
+  <tbody>
+    <tr>
+      <td><strong>Nombre del Bebes:</strong></td>
+      <td><%= Baby.find_by(id: @feed.baby_id).name %></td>
+    </tr>
+    <tr>
+      <td><strong>Cantidad de alimentos:</strong></td>
+      <td><%= @feed.cantidad %> ml </td>
+    </tr>
+    <tr>
+      <td><strong>Segundos de alimentación:</strong></td>
+      <td><%= @feed.time %> Secs</td>
+    </tr>
+    <tr>
+      <td><strong>Fecha:</strong></td>
+      <td><%= @feed.date.strftime('%H:%M - %d/%m/%Y') %></td>
+    </tr>
+  </tbody>
+</table>
 
-<p>
-  <strong>Cantidad de alimentos:</strong>
-  <%= @feed.cantidad %> ml 
-</p>
-
-<p>
-  <strong>Segundos de alimentación:</strong>
-  <%= @feed.time %> Secs
-</p>
-
-<p>
-  <strong>Fecha:</strong>
-  <%= @feed.date.strftime('%H:%M - %d/%m/%Y') %>
-</p>
-
-
-<%= link_to 'Index, vuelva prontos', feeds_path %>|
-<%= link_to 'Editar', edit_feed_path(@feed) %> 
+<p><%= link_to 'Index, vuelva prontos', feeds_path, :class => "badge badge-light text-reset"  %></p>
+<p><%= link_to 'Editar', edit_feed_path(@feed), :class => "badge badge-light text-reset"  %> </p>

@@ -2,7 +2,7 @@
 
 <h1>Control de alimentación</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Nombres del bebé</th>
@@ -28,5 +28,5 @@
 
 <br>
 
-<p><%= link_to 'Oh no! Más bebes Manjula!', new_baby_path %></p>
-<p><%= link_to 'Alimentar', feeds_path %></p>
+<p><%= link_to 'Oh no! Más bebes Manjula!', new_baby_path, :class => "badge badge-light text-reset"  %></p>
+<p><%= link_to 'Alimentar', feeds_path, :class => "badge badge-light text-reset"  %></p>
