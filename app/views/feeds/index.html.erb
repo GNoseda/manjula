@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Registros de alimentación</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Bebes alimentado</th>
+      <th>Alimentos</th>
+      <th>Tiempos</th>
+      <th>Fecha</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @feeds.each do |feed| %>
+      <tr>
+        <td><%= feed.baby.name  %></td>
+        <td><%= feed.cantidad %> mls</td>
+        <td><%= feed.time %> segundos</td>
+        <td><%= feed.date.strftime('%H:%M - %d/%m/%Y') %></td>
+        <td><%= link_to 'Detalle', feed %></td>
+        <td><%= link_to 'Editar registros', edit_feed_path(feed) %></td>
+        <td><%= link_to 'Destruir', feed, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Alimentar!', new_feed_path %>
+<%= link_to 'Bebes', babies_path %>

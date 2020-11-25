@@ -1,0 +1,37 @@
+<%= form_with(model: feed, local: true) do |form| %>
+  <% if feed.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(feed.errors.count, "error") %> prohibited this feed from being saved:</h2>
+
+      <ul>
+        <% feed.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :baby_id %>
+    <%= form.select :baby_id, options_from_collection_for_select(@babies, :id, :name) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cantidad %>
+    <%= form.text_field :cantidad %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Duración %>
+    <%= form.text_field :time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Fecha %>
+    <%= form.datetime_field :date %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

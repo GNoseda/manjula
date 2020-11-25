@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Bebes:</strong>
+  <%= Baby.find_by(id: @feed.baby_id).name %>
+</p>
+
+<p>
+  <strong>Cantidad de alimentos:</strong>
+  <%= @feed.cantidad %> ml 
+</p>
+
+<p>
+  <strong>Segundos de alimentación:</strong>
+  <%= @feed.time %> Secs
+</p>
+
+<p>
+  <strong>Fecha:</strong>
+  <%= @feed.date.strftime('%H:%M - %d/%m/%Y') %>
+</p>
+
+
+<%= link_to 'Index, vuelva prontos', feeds_path %>|
+<%= link_to 'Editar', edit_feed_path(@feed) %> 
