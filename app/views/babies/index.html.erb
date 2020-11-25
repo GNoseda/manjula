@@ -20,7 +20,7 @@
         <td><%= baby.total_feed %></td>
         <td><%= link_to 'Detalle', baby %></td>
         <td><%= link_to 'Renombrar', edit_baby_path(baby) %></td>
-        <td><%= link_to 'Regalar bebes', baby, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Regalar al bebes', baby, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +28,5 @@
 
 <br>
 
-<%= link_to 'Oh no! Más bebes Manjula!', new_baby_path %>
+<p><%= link_to 'Oh no! Más bebes Manjula!', new_baby_path %></p>
+<p><%= link_to 'Alimentar', feeds_path %></p>

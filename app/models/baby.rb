@@ -1,6 +1,6 @@
 class Baby < ApplicationRecord
         validates :name, presence: true
-        has_many :feed
+        has_many :feed, dependent: :destroy
 
         def total_feed 
                 self.feed.map(&:cantidad).sum
@@ -12,7 +12,8 @@ class Baby < ApplicationRecord
         end
 
         def last_feed
-                self.feed.map(&:date).max.strftime('%H:%M - %d/%m/%Y')
+                arr = self.feed.map(&:date)
+                arr.max.strftime('%H:%M - %d/%m/%Y') if arr.count > 0
         end
 
         def total_time_today

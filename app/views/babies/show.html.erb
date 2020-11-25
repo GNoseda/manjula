@@ -17,12 +17,13 @@
 
 <p>
   <strong>Tiempo alimentado hoy:</strong>
-  <%= @baby.total_time_today %>
+  <%= @baby.total_time_today%> secs
 </p>
 
 <p>
   <strong>Cantidad de alimento hoy:</strong>
-  <%= @baby.total_feeds_today %>
+  <%= @baby.total_feeds_today %> mls
 </p>
-<%= link_to 'Edit', edit_baby_path(@baby) %> |
-<%= link_to 'Back', babies_path %>
+
+<p><%= link_to 'Edit', edit_baby_path(@baby) %></p>
+<p><%= link_to 'Back', babies_path %></p>

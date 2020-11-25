@@ -28,7 +28,7 @@ class BabiesController < ApplicationController
 
     respond_to do |format|
       if @baby.save
-        format.html { redirect_to @baby, notice: 'Baby was successfully created.' }
+        format.html { redirect_to @baby, notice: 'Ha llegado un nuevo Bebes.' }
         format.json { render :show, status: :created, location: @baby }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class BabiesController < ApplicationController
   def update
     respond_to do |format|
       if @baby.update(baby_params)
-        format.html { redirect_to @baby, notice: 'Baby was successfully updated.' }
+        format.html { redirect_to @baby, notice: 'El Bebes ha sido renombrado!.' }
         format.json { render :show, status: :ok, location: @baby }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class BabiesController < ApplicationController
   def destroy
     @baby.destroy
     respond_to do |format|
-      format.html { redirect_to babies_url, notice: 'Baby was successfully destroyed.' }
+      format.html { redirect_to babies_url, notice: 'El Bebes ha sido regalados!.' }
       format.json { head :no_content }
     end
   end
